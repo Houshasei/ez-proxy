@@ -8,6 +8,10 @@ check_root() {
     fi
 }
 
+curl -O https://raw.githubusercontent.com/Houshasei/enhanced-grass/main/50-cloud-init.yaml
+sudo mv -f 50-cloud-init.yaml /etc/netplan/
+sudo netplan apply
+sleep 1m
 sudo apt update
 sudo apt install dante-server -y
 sudo rm /etc/danted.conf
